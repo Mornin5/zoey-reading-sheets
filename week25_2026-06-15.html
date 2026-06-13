@@ -41,8 +41,8 @@ body { font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif
 .content-block { font-size:12.5px; color:#444; line-height:1.9; letter-spacing:0.2px; }
 .key-line { font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; font-size:16px; font-weight:700; letter-spacing:2px;
   border-left:3px solid #999; padding:2px 11px; margin:7px 0; line-height:1.7; color:#333; }
-.char-grid { display:flex; flex-wrap:wrap; gap:12px 18px; }
-.char-card { display:flex; flex-direction:column; align-items:center; text-align:center; min-width:38px; max-width:90px; }
+.char-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px 8px; justify-items:center; }
+.char-card { display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0; max-width:100%; }
 .char-card .py { font-size:10px; color:#7a7a7a; line-height:1.4; min-height:14px; }
 .char-card .ch { font-size:23px; line-height:1.35; font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; }
 .char-card .mean { font-size:10px; color:#9a9a9a; margin-top:2px; }
@@ -246,7 +246,7 @@ body { font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif
     <span class="level-badge lv-mastered">已掌握</span>
   </div>
   <div class="work-body">
-    <div class="work-left"><div class="poem-text">东临碣石，以观沧海。<br>水何澹澹，山岛竦峙。<br>树木丛生，百草丰茂。<br>秋风萧瑟，洪波涌起。<br>日月之行，若出其中；星汉灿烂，若出其里。<br>幸甚至哉，歌以咏志。</div></div>
+    <div class="work-left"><div class="poem-text">东临碣石，以观沧海。<br>水何澹澹，山岛竦峙。<br>树木丛生，百草丰茂。<br>秋风萧瑟，洪波涌起。<br>日月之行，若出其中；<br>星汉灿烂，若出其里。<br>幸甚至哉，歌以咏志。</div></div>
     <div class="work-right"><div class="section-label">诗人 · 曹操</div><div class="content-block">曹操（155—220年），字孟德，沛国谯县（今安徽亳州）人。东汉末年杰出的政治家、军事家、文学家，三国时期魏国的奠基人。曹操不仅在政治军事上成就卓著，在文学上也有很高造诣，是建安文学的开创者和组织者。他的诗歌多反映汉末社会动乱和统一天下的雄心壮志，风格苍凉悲壮，气魄宏大。</div></div>
   </div>
 </div></div></div>
