@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>第25周朗读计划 · 2026-06-15—2026-06-20</title>
+<style>
+/* 设计定稿：经典正文用楷体（课本字体，笔画规范、利于认读），讲解用无衬线；
+   焦点诗句放大，次要信息收小、加呼吸感。 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:14px; color:#1a1a1a; background:#fff; padding:28px 34px; max-width:860px; margin:0 auto;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact; text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased; }
+.kai { font-family:"Kaiti SC","STKaiti","KaiTi","楷体","Noto Serif SC",serif; }
+.week-note { font-size:11px; color:#9a9a9a; letter-spacing:1px; padding-bottom:8px; margin-bottom:12px; }
+.week-note strong { font-size:15px; font-weight:700; color:#1a1a1a; letter-spacing:3px; display:block; margin-bottom:5px; }
+.day-section { margin-bottom:34px; }
+.day-header { display:flex; justify-content:space-between; align-items:baseline; font-size:15px; font-weight:700;
+  letter-spacing:4px; border-bottom:1px solid #dcdcdc; padding:5px 1px; margin-bottom:18px; }
+.day-header .count { font-weight:400; font-size:12px; color:#9a9a9a; letter-spacing:0; }
+.work-card { margin-bottom:16px; }
+.work-card:last-child { margin-bottom:0; }
+.work-card + .work-card { padding-top:14px; }
+.work-header { display:flex; align-items:baseline; flex-wrap:wrap; gap:9px; margin-bottom:11px; }
+.work-title { font-size:19px; font-weight:700; letter-spacing:1px;
+  font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; }
+.work-meta { font-size:12px; color:#9a9a9a; letter-spacing:0.5px; }
+.level-badge { font-size:10px; padding:2px 8px; border-radius:10px; border:1px solid currentColor; letter-spacing:1px; white-space:nowrap; }
+.lv-new { color:#1d4ed8; } .lv-familiar { color:#b45309; } .lv-fluent { color:#92400e; } .lv-mastered { color:#9a9a9a; }
+.work-body { display:grid; grid-template-columns:1.2fr 0.8fr; gap:26px; align-items:start; }
+.poem-text, .py-text { font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; }
+.poem-text { font-size:20px; line-height:2.1; letter-spacing:2px; white-space:nowrap; }
+.py-text { font-size:20px; letter-spacing:1px; }
+.py-line { display:flex; flex-wrap:nowrap; align-items:flex-end; margin-bottom:9px; }
+.c { display:inline-flex; flex-direction:column; align-items:center; flex-shrink:0; min-width:1em; }
+.c::before { content:attr(data-p); display:block; height:15px; line-height:15px; font-size:10px;
+  font-family:"PingFang SC",sans-serif; font-weight:400; color:#7a7a7a; text-align:center; white-space:nowrap; letter-spacing:0; }
+.c.punct { min-width:0.5em; }
+.section-label { font-size:10px; color:#a9a9a9; letter-spacing:3px; margin:13px 0 5px; }
+.section-label:first-child { margin-top:0; }
+.content-block { font-size:12.5px; color:#444; line-height:1.9; letter-spacing:0.2px; }
+.key-line { font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; font-size:16px; font-weight:700; letter-spacing:2px;
+  border-left:3px solid #999; padding:2px 11px; margin:7px 0; line-height:1.7; color:#333; }
+.char-grid { display:flex; flex-wrap:wrap; gap:12px 18px; }
+.char-card { display:flex; flex-direction:column; align-items:center; text-align:center; min-width:38px; max-width:90px; }
+.char-card .py { font-size:10px; color:#7a7a7a; line-height:1.4; min-height:14px; }
+.char-card .ch { font-size:23px; line-height:1.35; font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; }
+.char-card .mean { font-size:10px; color:#9a9a9a; margin-top:2px; }
+@media print {
+  body { padding:0 22px; font-size:12px; max-width:none; margin:0; }
+  .day-section + .day-section { page-break-before:always; }
+  .day-section { display:flex; flex-direction:column; height:100vh; padding-top:16px; padding-bottom:16px; overflow:hidden; }
+  .day-header { flex-shrink:0; margin-bottom:14px; }
+  .week-note { flex-shrink:0; }
+  .works-container { flex:1; display:flex; flex-direction:column; justify-content:flex-start; gap:30px; overflow:hidden; }
+  .works-container:has(.work-card:nth-child(3):last-child) { gap:64px; }
+  .works-container:has(.work-card:nth-child(4):last-child) { gap:42px; }
+  .works-container:has(.work-card:nth-child(5):last-child) { gap:26px; }
+  .work-card { flex-shrink:0; margin-bottom:0; padding-top:0; }
+  .work-card + .work-card { padding-top:0; }
+  .poem-text { font-size:18px; line-height:2.0; }
+  .py-text { font-size:18px; }
+  .py-line { margin-bottom:7px; }
+  .c::before { font-size:9.5px; height:13px; line-height:13px; }
+  .char-card .ch { font-size:20px; }
+  .content-block { font-size:11.5px; line-height:1.85; }
+  .work-body { gap:22px; }
+}
+</style>
+</head>
+<body>
+<div class="day-section"><div class="week-note"><strong>第 25 周 · 朗读计划</strong>2026-06-15（周一）— 2026-06-20（周六）&ensp;·&ensp;本周 18首次 · 新课 1篇 · 复习 12篇</div><div class="day-header">周一 · 2026-06-15<span class="count">3首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">自相矛盾</span>
+    <span class="work-meta">韩非 · 先秦 · 文言文</span>
+    <span class="level-badge lv-new">新课·第1天</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">楚</span><span class="c">人</span><span class="c">有</span><span class="c" data-p="yù">鬻</span><span class="c">盾</span><span class="c">与</span><span class="c">矛</span><span class="c">者</span><span class="c punct">，</span><span class="c" data-p="yù">誉</span><span class="c">之</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c" data-p="wú">吾</span><span class="c">盾</span><span class="c">之</span><span class="c">坚</span><span class="c punct">，</span><span class="c">物</span><span class="c">莫</span><span class="c">能</span><span class="c" data-p="xiàn">陷</span><span class="c">也</span><span class="c punct">。</span><span class="c">&quot;</span></div><div class="py-line"><span class="c">又</span><span class="c" data-p="yù">誉</span><span class="c">其</span><span class="c">矛</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c" data-p="wú">吾</span><span class="c">矛</span><span class="c">之</span><span class="c">利</span><span class="c punct">，</span><span class="c">于</span><span class="c">物</span><span class="c">无</span><span class="c">不</span><span class="c" data-p="xiàn">陷</span><span class="c">也</span><span class="c punct">。</span><span class="c">&quot;</span></div><div class="py-line"><span class="c" data-p="huò">或</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c">以</span><span class="c">子</span><span class="c">之</span><span class="c">矛</span><span class="c punct">，</span><span class="c" data-p="xiàn">陷</span><span class="c">子</span><span class="c">之</span><span class="c">盾</span><span class="c punct">，</span><span class="c">何</span><span class="c">如</span><span class="c punct">？</span><span class="c">&quot;</span></div><div class="py-line"><span class="c">其</span><span class="c">人</span><span class="c" data-p="fú">弗</span><span class="c">能</span><span class="c" data-p="yìng">应</span><span class="c">也</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="fú">夫</span><span class="c">不</span><span class="c">可</span><span class="c" data-p="xiàn">陷</span><span class="c">之</span><span class="c">盾</span><span class="c">与</span><span class="c">无</span><span class="c">不</span><span class="c" data-p="xiàn">陷</span><span class="c">之</span><span class="c">矛</span><span class="c punct">，</span><span class="c">不</span><span class="c">可</span><span class="c">同</span><span class="c">世</span><span class="c">而</span><span class="c">立</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">难字</div><div class="char-grid"><div class="char-card"><span class="py">yù</span><span class="ch">鬻</span><span class="mean">卖</span></div><div class="char-card"><span class="py">yù</span><span class="ch">誉</span><span class="mean">称赞；夸耀</span></div><div class="char-card"><span class="py">yuē</span><span class="ch">曰</span><span class="mean">说</span></div><div class="char-card"><span class="py">wú</span><span class="ch">吾</span><span class="mean">我</span></div><div class="char-card"><span class="py">xiàn</span><span class="ch">陷</span><span class="mean">刺破</span></div><div class="char-card"><span class="py">huò</span><span class="ch">或</span><span class="mean">有的人</span></div><div class="char-card"><span class="py">fú</span><span class="ch">弗</span><span class="mean">不</span></div><div class="char-card"><span class="py">yìng</span><span class="ch">应</span><span class="mean">回答</span></div><div class="char-card"><span class="py">fú</span><span class="ch">夫</span><span class="mean">句首发语词</span></div></div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">村晚</span>
+    <span class="work-meta">雷震 · 宋 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">草满池塘水满陂，山衔落日浸寒漪。<br>牧童归去横牛背，短笛无腔信口吹。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">雷震是宋代诗人，生活在江南地区。宋代文人常常向往田园生活，追求远离尘嚣的宁静。诗人可能在某个傍晚，看到了这样一幅美丽的乡村景象：夕阳西下，牧童归家，于是有感而发，创作了这首诗。诗中描写的场景是江南水乡常见的景象，池塘、青草、落日、牧童，构成了一幅和谐的田园画卷。诗人通过细腻的观察和生动的描写，表达了对乡村生活的喜爱和对自然美景的赞美。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">赴戍登程口占示家人二首（其二）</span>
+    <span class="work-meta">林则徐 · 清 · 古诗</span>
+    <span class="level-badge lv-familiar">熟悉复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">力</span><span class="c">微</span><span class="c">任</span><span class="c">重</span><span class="c">久</span><span class="c">神</span><span class="c">疲</span><span class="c punct">，</span><span class="c">再</span><span class="c" data-p="jié">竭</span><span class="c" data-p="shuāi">衰</span><span class="c" data-p="yōng">庸</span><span class="c">定</span><span class="c">不</span><span class="c">支</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="gǒu">苟</span><span class="c">利</span><span class="c">国</span><span class="c">家</span><span class="c">生</span><span class="c">死</span><span class="c">以</span><span class="c punct">，</span><span class="c" data-p="qǐ">岂</span><span class="c">因</span><span class="c">祸</span><span class="c">福</span><span class="c">避</span><span class="c" data-p="qū">趋</span><span class="c">之</span><span class="c punct">？</span></div><div class="py-line"><span class="c" data-p="zhé">谪</span><span class="c">居</span><span class="c">正</span><span class="c">是</span><span class="c">君</span><span class="c">恩</span><span class="c">厚</span><span class="c punct">，</span><span class="c">养</span><span class="c" data-p="zhuō">拙</span><span class="c">刚</span><span class="c">于</span><span class="c" data-p="shù">戍</span><span class="c" data-p="zú">卒</span><span class="c">宜</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="xì">戏</span><span class="c">与</span><span class="c">山</span><span class="c">妻</span><span class="c">谈</span><span class="c">故</span><span class="c">事</span><span class="c punct">，</span><span class="c">试</span><span class="c" data-p="yín">吟</span><span class="c">断</span><span class="c">送</span><span class="c">老</span><span class="c">头</span><span class="c">皮</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">林则徐因虎门销烟被皇帝罢官，发配去新疆当士兵。这首诗是他在路上写给家人的。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周二 · 2026-06-16<span class="count">2首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">自相矛盾</span>
+    <span class="work-meta">韩非 · 先秦 · 文言文</span>
+    <span class="level-badge lv-new">新课·第2天</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">楚</span><span class="c">人</span><span class="c">有</span><span class="c" data-p="yù">鬻</span><span class="c">盾</span><span class="c">与</span><span class="c">矛</span><span class="c">者</span><span class="c punct">，</span><span class="c" data-p="yù">誉</span><span class="c">之</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c" data-p="wú">吾</span><span class="c">盾</span><span class="c">之</span><span class="c">坚</span><span class="c punct">，</span><span class="c">物</span><span class="c">莫</span><span class="c">能</span><span class="c" data-p="xiàn">陷</span><span class="c">也</span><span class="c punct">。</span><span class="c">&quot;</span></div><div class="py-line"><span class="c">又</span><span class="c" data-p="yù">誉</span><span class="c">其</span><span class="c">矛</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c" data-p="wú">吾</span><span class="c">矛</span><span class="c">之</span><span class="c">利</span><span class="c punct">，</span><span class="c">于</span><span class="c">物</span><span class="c">无</span><span class="c">不</span><span class="c" data-p="xiàn">陷</span><span class="c">也</span><span class="c punct">。</span><span class="c">&quot;</span></div><div class="py-line"><span class="c" data-p="huò">或</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c">以</span><span class="c">子</span><span class="c">之</span><span class="c">矛</span><span class="c punct">，</span><span class="c" data-p="xiàn">陷</span><span class="c">子</span><span class="c">之</span><span class="c">盾</span><span class="c punct">，</span><span class="c">何</span><span class="c">如</span><span class="c punct">？</span><span class="c">&quot;</span></div><div class="py-line"><span class="c">其</span><span class="c">人</span><span class="c" data-p="fú">弗</span><span class="c">能</span><span class="c" data-p="yìng">应</span><span class="c">也</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="fú">夫</span><span class="c">不</span><span class="c">可</span><span class="c" data-p="xiàn">陷</span><span class="c">之</span><span class="c">盾</span><span class="c">与</span><span class="c">无</span><span class="c">不</span><span class="c" data-p="xiàn">陷</span><span class="c">之</span><span class="c">矛</span><span class="c punct">，</span><span class="c">不</span><span class="c">可</span><span class="c">同</span><span class="c">世</span><span class="c">而</span><span class="c">立</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">名句</div><div class="key-line">以子之矛，陷子之盾，何如</div><div class="content-block">用你的矛去刺你的盾，会怎么样呢？这句话揭示了卖家言论的矛盾之处，成为点睛之笔。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">论语节选</span>
+    <span class="work-meta">孔丘 · 先秦 · 文言文</span>
+    <span class="level-badge lv-familiar">熟悉复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">知</span><span class="c">之</span><span class="c">为</span><span class="c">知</span><span class="c">之</span><span class="c punct">，</span><span class="c">不</span><span class="c">知</span><span class="c">为</span><span class="c">不</span><span class="c">知</span><span class="c punct">，</span><span class="c">是</span><span class="c" data-p="zhì">知</span><span class="c">也</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="mǐn">敏</span><span class="c">而</span><span class="c" data-p="hào">好</span><span class="c">学</span><span class="c punct">，</span><span class="c">不</span><span class="c" data-p="chǐ">耻</span><span class="c">下</span><span class="c">问</span><span class="c punct">。</span></div><div class="py-line"><span class="c">默</span><span class="c">而</span><span class="c" data-p="zhì">识</span><span class="c">之</span><span class="c punct">，</span><span class="c">学</span><span class="c">而</span><span class="c">不</span><span class="c" data-p="yàn">厌</span><span class="c punct">，</span><span class="c" data-p="huì">诲</span><span class="c">人</span><span class="c">不</span><span class="c">倦</span><span class="c punct">。</span></div><div class="py-line"><span class="c">我</span><span class="c">非</span><span class="c">生</span><span class="c">而</span><span class="c">知</span><span class="c">之</span><span class="c">者</span><span class="c punct">，</span><span class="c" data-p="hào">好</span><span class="c">古</span><span class="c punct">，</span><span class="c" data-p="mǐn">敏</span><span class="c">以</span><span class="c">求</span><span class="c">之</span><span class="c">者</span><span class="c">也</span><span class="c punct">。</span></div><div class="py-line"><span class="c">学</span><span class="c">如</span><span class="c">不</span><span class="c">及</span><span class="c punct">，</span><span class="c">犹</span><span class="c">恐</span><span class="c">失</span><span class="c">之</span><span class="c punct">。</span></div><div class="py-line"><span class="c">吾</span><span class="c">尝</span><span class="c">终</span><span class="c">日</span><span class="c">不</span><span class="c">食</span><span class="c punct">，</span><span class="c">终</span><span class="c">夜</span><span class="c">不</span><span class="c">寝</span><span class="c punct">，</span><span class="c">以</span><span class="c">思</span><span class="c punct">，</span><span class="c">无</span><span class="c">益</span><span class="c punct">，</span><span class="c">不</span><span class="c">如</span><span class="c">学</span><span class="c">也</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">孔子说自己&quot;学而不厌，诲人不倦&quot;——学起来不嫌烦，教人也不觉累。他活到老学到老，晚年还在钻研学问，这几句正是他自己的写照。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周三 · 2026-06-17<span class="count">3首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">论语节选</span>
+    <span class="work-meta">孔丘 · 先秦 · 文言文</span>
+    <span class="level-badge lv-familiar">熟悉复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">知</span><span class="c">之</span><span class="c">为</span><span class="c">知</span><span class="c">之</span><span class="c punct">，</span><span class="c">不</span><span class="c">知</span><span class="c">为</span><span class="c">不</span><span class="c">知</span><span class="c punct">，</span><span class="c">是</span><span class="c" data-p="zhì">知</span><span class="c">也</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="mǐn">敏</span><span class="c">而</span><span class="c" data-p="hào">好</span><span class="c">学</span><span class="c punct">，</span><span class="c">不</span><span class="c" data-p="chǐ">耻</span><span class="c">下</span><span class="c">问</span><span class="c punct">。</span></div><div class="py-line"><span class="c">默</span><span class="c">而</span><span class="c" data-p="zhì">识</span><span class="c">之</span><span class="c punct">，</span><span class="c">学</span><span class="c">而</span><span class="c">不</span><span class="c" data-p="yàn">厌</span><span class="c punct">，</span><span class="c" data-p="huì">诲</span><span class="c">人</span><span class="c">不</span><span class="c">倦</span><span class="c punct">。</span></div><div class="py-line"><span class="c">我</span><span class="c">非</span><span class="c">生</span><span class="c">而</span><span class="c">知</span><span class="c">之</span><span class="c">者</span><span class="c punct">，</span><span class="c" data-p="hào">好</span><span class="c">古</span><span class="c punct">，</span><span class="c" data-p="mǐn">敏</span><span class="c">以</span><span class="c">求</span><span class="c">之</span><span class="c">者</span><span class="c">也</span><span class="c punct">。</span></div><div class="py-line"><span class="c">学</span><span class="c">如</span><span class="c">不</span><span class="c">及</span><span class="c punct">，</span><span class="c">犹</span><span class="c">恐</span><span class="c">失</span><span class="c">之</span><span class="c punct">。</span></div><div class="py-line"><span class="c">吾</span><span class="c">尝</span><span class="c">终</span><span class="c">日</span><span class="c">不</span><span class="c">食</span><span class="c punct">，</span><span class="c">终</span><span class="c">夜</span><span class="c">不</span><span class="c">寝</span><span class="c punct">，</span><span class="c">以</span><span class="c">思</span><span class="c punct">，</span><span class="c">无</span><span class="c">益</span><span class="c punct">，</span><span class="c">不</span><span class="c">如</span><span class="c">学</span><span class="c">也</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">&quot;不耻下问&quot;——向懂得比自己少、地位比自己低的人请教，一点不丢人。孔子进太庙遇事都问，有人笑他，他说：多问，这才是懂礼。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">采薇（节选）</span>
+    <span class="work-meta">未知 · 先秦 · 古诗</span>
+    <span class="level-badge lv-familiar">熟悉复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">昔</span><span class="c">我</span><span class="c">往</span><span class="c">矣</span><span class="c punct">，</span><span class="c">杨</span><span class="c">柳</span><span class="c">依</span><span class="c">依</span><span class="c punct">。</span></div><div class="py-line"><span class="c">今</span><span class="c">我</span><span class="c">来</span><span class="c">思</span><span class="c punct">，</span><span class="c" data-p="yù">雨</span><span class="c">雪</span><span class="c" data-p="fēi">霏</span><span class="c" data-p="fēi">霏</span><span class="c punct">。</span></div><div class="py-line"><span class="c">行</span><span class="c">道</span><span class="c">迟</span><span class="c">迟</span><span class="c punct">，</span><span class="c">载</span><span class="c">渴</span><span class="c">载</span><span class="c">饥</span><span class="c punct">。</span></div><div class="py-line"><span class="c">我</span><span class="c">心</span><span class="c">伤</span><span class="c">悲</span><span class="c punct">，</span><span class="c">莫</span><span class="c">知</span><span class="c">我</span><span class="c">哀</span><span class="c punct">！</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">《采薇》出自《诗经》——中国最早的诗歌集，收了三百多首，大多是两三千年前的民歌，有写劳动、写爱情，也有写打仗的。这首就是一名远征士兵的心声。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">赴戍登程口占示家人二首（其二）</span>
+    <span class="work-meta">林则徐 · 清 · 古诗</span>
+    <span class="level-badge lv-familiar">熟悉复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">力</span><span class="c">微</span><span class="c">任</span><span class="c">重</span><span class="c">久</span><span class="c">神</span><span class="c">疲</span><span class="c punct">，</span><span class="c">再</span><span class="c" data-p="jié">竭</span><span class="c" data-p="shuāi">衰</span><span class="c" data-p="yōng">庸</span><span class="c">定</span><span class="c">不</span><span class="c">支</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="gǒu">苟</span><span class="c">利</span><span class="c">国</span><span class="c">家</span><span class="c">生</span><span class="c">死</span><span class="c">以</span><span class="c punct">，</span><span class="c" data-p="qǐ">岂</span><span class="c">因</span><span class="c">祸</span><span class="c">福</span><span class="c">避</span><span class="c" data-p="qū">趋</span><span class="c">之</span><span class="c punct">？</span></div><div class="py-line"><span class="c" data-p="zhé">谪</span><span class="c">居</span><span class="c">正</span><span class="c">是</span><span class="c">君</span><span class="c">恩</span><span class="c">厚</span><span class="c punct">，</span><span class="c">养</span><span class="c" data-p="zhuō">拙</span><span class="c">刚</span><span class="c">于</span><span class="c" data-p="shù">戍</span><span class="c" data-p="zú">卒</span><span class="c">宜</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="xì">戏</span><span class="c">与</span><span class="c">山</span><span class="c">妻</span><span class="c">谈</span><span class="c">故</span><span class="c">事</span><span class="c punct">，</span><span class="c">试</span><span class="c" data-p="yín">吟</span><span class="c">断</span><span class="c">送</span><span class="c">老</span><span class="c">头</span><span class="c">皮</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">&quot;苟利国家生死以，岂因祸福避趋之&quot;——只要对国家有利，生死都豁得出去，怎能因祸福就躲来躲去。这两句成了千古名句。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周四 · 2026-06-18<span class="count">3首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">自相矛盾</span>
+    <span class="work-meta">韩非 · 先秦 · 文言文</span>
+    <span class="level-badge lv-new">新课·第3天</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">楚</span><span class="c">人</span><span class="c">有</span><span class="c" data-p="yù">鬻</span><span class="c">盾</span><span class="c">与</span><span class="c">矛</span><span class="c">者</span><span class="c punct">，</span><span class="c" data-p="yù">誉</span><span class="c">之</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c" data-p="wú">吾</span><span class="c">盾</span><span class="c">之</span><span class="c">坚</span><span class="c punct">，</span><span class="c">物</span><span class="c">莫</span><span class="c">能</span><span class="c" data-p="xiàn">陷</span><span class="c">也</span><span class="c punct">。</span><span class="c">&quot;</span></div><div class="py-line"><span class="c">又</span><span class="c" data-p="yù">誉</span><span class="c">其</span><span class="c">矛</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c" data-p="wú">吾</span><span class="c">矛</span><span class="c">之</span><span class="c">利</span><span class="c punct">，</span><span class="c">于</span><span class="c">物</span><span class="c">无</span><span class="c">不</span><span class="c" data-p="xiàn">陷</span><span class="c">也</span><span class="c punct">。</span><span class="c">&quot;</span></div><div class="py-line"><span class="c" data-p="huò">或</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c">以</span><span class="c">子</span><span class="c">之</span><span class="c">矛</span><span class="c punct">，</span><span class="c" data-p="xiàn">陷</span><span class="c">子</span><span class="c">之</span><span class="c">盾</span><span class="c punct">，</span><span class="c">何</span><span class="c">如</span><span class="c punct">？</span><span class="c">&quot;</span></div><div class="py-line"><span class="c">其</span><span class="c">人</span><span class="c" data-p="fú">弗</span><span class="c">能</span><span class="c" data-p="yìng">应</span><span class="c">也</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="fú">夫</span><span class="c">不</span><span class="c">可</span><span class="c" data-p="xiàn">陷</span><span class="c">之</span><span class="c">盾</span><span class="c">与</span><span class="c">无</span><span class="c">不</span><span class="c" data-p="xiàn">陷</span><span class="c">之</span><span class="c">矛</span><span class="c punct">，</span><span class="c">不</span><span class="c">可</span><span class="c">同</span><span class="c">世</span><span class="c">而</span><span class="c">立</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">卖兵器的人吹自己的盾谁都戳不破、矛又啥都戳得穿；旁人问&quot;拿你的矛戳你的盾会咋样&quot;，他答不上来了——话前后打架，就叫自相矛盾。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">过零丁洋</span>
+    <span class="work-meta">文天祥 · 宋 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">辛苦遭逢起一经，干戈寥落四周星。<br>山河破碎风飘絮，身世浮沉雨打萍。<br>惶恐滩头说惶恐，零丁洋里叹零丁。<br>人生自古谁无死？留取丹心照汗青。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">文天祥抗元兵败被俘，元朝百般劝降，他宁死不屈。&quot;人生自古谁无死&quot;就是他的回答，最后从容就义。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">蝉</span>
+    <span class="work-meta">虞世南 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">垂緌饮清露，流响出疏桐。<br>居高声自远，非是藉秋风。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">虞世南是唐初著名书法家和诗人，曾任唐太宗的侍臣。他为人正直，品格高洁，深受唐太宗器重。这首诗作于他在朝为官期间，借咏蝉来表明自己的志向和品格。当时朝廷内部有些人依附权贵，虞世南以此诗表明自己不同流合污，凭借自身的才德立身，不需要借助外力。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周五 · 2026-06-19<span class="count">3首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">杨氏之子</span>
+    <span class="work-meta">刘义庆 · 南北朝 · 文言文</span>
+    <span class="level-badge lv-fluent">熟练复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">梁</span><span class="c">国</span><span class="c">杨</span><span class="c">氏</span><span class="c">子</span><span class="c">九</span><span class="c">岁</span><span class="c punct">，</span><span class="c">甚</span><span class="c">聪</span><span class="c" data-p="huì">惠</span><span class="c punct">。</span></div><div class="py-line"><span class="c">孔</span><span class="c">君</span><span class="c">平</span><span class="c" data-p="yì">诣</span><span class="c">其</span><span class="c">父</span><span class="c punct">，</span><span class="c">父</span><span class="c">不</span><span class="c">在</span><span class="c punct">，</span><span class="c" data-p="nǎi">乃</span><span class="c">呼</span><span class="c">儿</span><span class="c">出</span><span class="c punct">。</span></div><div class="py-line"><span class="c">为</span><span class="c">设</span><span class="c">果</span><span class="c punct">，</span><span class="c">果</span><span class="c">有</span><span class="c">杨</span><span class="c">梅</span><span class="c punct">。</span></div><div class="py-line"><span class="c">孔</span><span class="c">指</span><span class="c">以</span><span class="c">示</span><span class="c">儿</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c">此</span><span class="c">是</span><span class="c">君</span><span class="c">家</span><span class="c">果</span><span class="c punct">。</span><span class="c">&quot;</span></div><div class="py-line"><span class="c">儿</span><span class="c">应</span><span class="c">声</span><span class="c">答</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c">未</span><span class="c">闻</span><span class="c">孔</span><span class="c">雀</span><span class="c">是</span><span class="c">夫</span><span class="c">子</span><span class="c">家</span><span class="c" data-p="qín">禽</span><span class="c punct">。</span><span class="c">&quot;</span></div></div></div>
+    <div class="work-right"><div class="section-label">名句</div><div class="key-line">未闻孔雀是夫子家禽</div><div class="content-block">我没听说孔雀是您家的鸟，这句话巧妙地回应了客人的玩笑，既礼貌又机智，展现了儿童的聪慧。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">采薇（节选）</span>
+    <span class="work-meta">未知 · 先秦 · 古诗</span>
+    <span class="level-badge lv-familiar">熟悉复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">昔</span><span class="c">我</span><span class="c">往</span><span class="c">矣</span><span class="c punct">，</span><span class="c">杨</span><span class="c">柳</span><span class="c">依</span><span class="c">依</span><span class="c punct">。</span></div><div class="py-line"><span class="c">今</span><span class="c">我</span><span class="c">来</span><span class="c">思</span><span class="c punct">，</span><span class="c" data-p="yù">雨</span><span class="c">雪</span><span class="c" data-p="fēi">霏</span><span class="c" data-p="fēi">霏</span><span class="c punct">。</span></div><div class="py-line"><span class="c">行</span><span class="c">道</span><span class="c">迟</span><span class="c">迟</span><span class="c punct">，</span><span class="c">载</span><span class="c">渴</span><span class="c">载</span><span class="c">饥</span><span class="c punct">。</span></div><div class="py-line"><span class="c">我</span><span class="c">心</span><span class="c">伤</span><span class="c">悲</span><span class="c punct">，</span><span class="c">莫</span><span class="c">知</span><span class="c">我</span><span class="c">哀</span><span class="c punct">！</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">古人送别爱折柳枝相赠，&quot;柳&quot;谐音&quot;留&quot;。&quot;昔我往矣，杨柳依依&quot;里风中的杨柳，既是家乡春天的模样，也藏着一份舍不得。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">送元二使安西</span>
+    <span class="work-meta">王维 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">渭城朝雨浥轻尘，客舍青青柳色新。<br>劝君更尽一杯酒，西出阳关无故人。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">好友元二要去遥远的西北边塞，王维一路送到渭城，劝他再干一杯——出了阳关，可就再没有老朋友陪你喝酒了。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周六 · 2026-06-20<span class="count">4首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">宿建德江</span>
+    <span class="work-meta">孟浩然 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">移舟泊烟渚，日暮客愁新。<br>野旷天低树，江清月近人。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">孟浩然一辈子没做成官，四十岁进京赶考落了榜，索性游山玩水。这首是他乘船漂泊、对着江上明月排愁时写的。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">浪淘沙（其一）</span>
+    <span class="work-meta">刘禹锡 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">九曲黄河万里沙，浪淘风簸自天涯。<br>如今直上银河去，同到牵牛织女家。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">刘禹锡得罪权贵被一贬再贬，却越挫越豪气，人称&quot;诗豪&quot;。这首他突发奇想，要顺着黄河一路飞到天上，去牛郎织女家做客。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">七律·长征</span>
+    <span class="work-meta">毛泽东 · 现代 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">红军不怕远征难，万水千山只等闲。<br>五岭逶迤腾细浪，乌蒙磅礴走泥丸。<br>金沙水拍云崖暖，大渡桥横铁索寒。<br>更喜岷山千里雪，三军过后尽开颜。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">这首诗创作于1935年10月，当时中国工农红军第一方面军即将结束长征，到达陕北。长征是中国革命史上的伟大壮举，从1934年10月开始，红军历时两年，行程二万五千里，跨越了十一个省份，翻越了无数座高山，渡过了二十四条河流，经历了无数次战斗，最终胜利到达陕北。长征途中，红军面临着国民党军队的围追堵截，还要克服恶劣的自然环境，许多战士献出了宝贵的生命。毛泽东作为红军的领导人，亲身经历了长征的全过程。这首诗正是他在长征即将胜利结束时，回顾长征历程，总结长征精神而创作的。诗中提到的五岭、乌蒙、金沙江、大渡河、岷山等，都是长征途中经过的重要地点。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">观沧海</span>
+    <span class="work-meta">曹操 · 三国 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">东临碣石，以观沧海。<br>水何澹澹，山岛竦峙。<br>树木丛生，百草丰茂。<br>秋风萧瑟，洪波涌起。<br>日月之行，若出其中；星汉灿烂，若出其里。<br>幸甚至哉，歌以咏志。</div></div>
+    <div class="work-right"><div class="section-label">诗人 · 曹操</div><div class="content-block">曹操（155—220年），字孟德，沛国谯县（今安徽亳州）人。东汉末年杰出的政治家、军事家、文学家，三国时期魏国的奠基人。曹操不仅在政治军事上成就卓著，在文学上也有很高造诣，是建安文学的开创者和组织者。他的诗歌多反映汉末社会动乱和统一天下的雄心壮志，风格苍凉悲壮，气魄宏大。</div></div>
+  </div>
+</div></div></div>
+</body>
+</html>
