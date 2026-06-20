@@ -32,10 +32,11 @@ body { font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif
 .poem-text { font-size:20px; line-height:2.1; letter-spacing:2px; white-space:nowrap; }
 .py-text { font-size:20px; letter-spacing:1px; }
 .py-line { display:flex; flex-wrap:wrap; align-items:flex-end; margin-bottom:9px; row-gap:6px; }
-.c { display:inline-flex; flex-direction:column; align-items:center; flex-shrink:0; min-width:1em; }
-.c::before { content:attr(data-p); display:block; height:15px; line-height:15px; font-size:10px;
-  font-family:"PingFang SC",sans-serif; font-weight:400; color:#333; text-align:center; white-space:nowrap; letter-spacing:0; }
-.c.punct { min-width:0.5em; }
+/* 固定 1em 字格 + 拼音绝对定位（不撑宽字格）→ 逐字等宽成网格、上下行诗句对齐 */
+.c { position:relative; display:inline-block; flex-shrink:0; width:1em; padding-top:15px; text-align:center; }
+.c::before { content:attr(data-p); position:absolute; top:0; left:50%; transform:translateX(-50%);
+  height:15px; line-height:15px; font-size:10px;
+  font-family:"PingFang SC",sans-serif; font-weight:400; color:#333; white-space:nowrap; letter-spacing:0; }
 .section-label { font-size:10px; color:#4a4a4a; letter-spacing:3px; margin:13px 0 5px; }
 .section-label:first-child { margin-top:0; }
 .content-block { font-size:12.5px; color:#333; line-height:1.9; letter-spacing:0.2px; }
@@ -230,17 +231,14 @@ body { font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif
   </div>
 </div><div class="work-card">
   <div class="work-header">
-    <span class="work-title">长歌行</span>
-    <span class="work-meta">未知 · 先秦 · 古诗</span>
+    <span class="work-title">贾生</span>
+    <span class="work-meta">李商隐 · 唐 · 古诗</span>
     <span class="level-badge lv-mastered">已掌握</span>
   </div>
   <div class="work-body">
-    <div class="work-left"><div class="poem-text">青青园中葵，朝露待日晞。<br>
-阳春布德泽，万物生光辉。<br>
-常恐秋节至，焜黄华叶衰。<br>
-百川东到海，何时复西归？<br>
-少壮不努力，老大徒伤悲！</div></div>
-    <div class="work-right"><div class="section-label">故事</div><div class="content-block">汉乐府的劝学诗。借园里葵菜会枯、江水东流不回头，说时光一去不返；末句&quot;少壮不努力，老大徒伤悲&quot;劝人趁年少努力。</div></div>
+    <div class="work-left"><div class="poem-text">宣室求贤访逐臣，贾生才调更无伦。<br>
+可怜夜半虚前席，不问苍生问鬼神。</div></div>
+    <div class="work-right"><div class="section-label">诗人 · 李商隐</div><div class="content-block">李商隐（813-858），字义山，号玉溪生、樊南生，怀州河内人，晚唐著名诗人。</div></div>
   </div>
 </div><div class="work-card">
   <div class="work-header">
@@ -311,14 +309,17 @@ body { font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif
   </div>
 </div><div class="work-card">
   <div class="work-header">
-    <span class="work-title">贾生</span>
-    <span class="work-meta">李商隐 · 唐 · 古诗</span>
+    <span class="work-title">长歌行</span>
+    <span class="work-meta">未知 · 先秦 · 古诗</span>
     <span class="level-badge lv-mastered">已掌握</span>
   </div>
   <div class="work-body">
-    <div class="work-left"><div class="poem-text">宣室求贤访逐臣，贾生才调更无伦。<br>
-可怜夜半虚前席，不问苍生问鬼神。</div></div>
-    <div class="work-right"><div class="section-label">诗人 · 李商隐</div><div class="content-block">李商隐（813-858），字义山，号玉溪生、樊南生，怀州河内人，晚唐著名诗人。</div></div>
+    <div class="work-left"><div class="poem-text">青青园中葵，朝露待日晞。<br>
+阳春布德泽，万物生光辉。<br>
+常恐秋节至，焜黄华叶衰。<br>
+百川东到海，何时复西归？<br>
+少壮不努力，老大徒伤悲！</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">汉乐府的劝学诗。借园里葵菜会枯、江水东流不回头，说时光一去不返；末句&quot;少壮不努力，老大徒伤悲&quot;劝人趁年少努力。</div></div>
   </div>
 </div><div class="work-card">
   <div class="work-header">
