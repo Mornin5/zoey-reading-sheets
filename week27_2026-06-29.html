@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>第27周朗读计划 · 2026-06-29—2026-07-04</title>
+<style>
+/* 设计定稿：经典正文用楷体（课本字体，笔画规范、利于认读），讲解用无衬线；
+   焦点诗句放大，次要信息收小、加呼吸感。 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:14px; color:#1a1a1a; background:#fff; padding:28px 34px; max-width:860px; margin:0 auto;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact; text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased; }
+.kai { font-family:"Kaiti SC","STKaiti","KaiTi","楷体","Noto Serif SC",serif; }
+.week-note { font-size:11px; color:#4a4a4a; letter-spacing:1px; padding-bottom:8px; margin-bottom:12px; }
+.week-note strong { font-size:15px; font-weight:700; color:#1a1a1a; letter-spacing:3px; display:block; margin-bottom:5px; }
+.day-section { margin-bottom:34px; }
+.day-header { display:flex; justify-content:space-between; align-items:baseline; font-size:15px; font-weight:700;
+  letter-spacing:4px; border-bottom:1px solid #dcdcdc; padding:5px 1px; margin-bottom:18px; }
+.day-header .count { font-weight:400; font-size:12px; color:#4a4a4a; letter-spacing:0; }
+.work-card { margin-bottom:16px; }
+.work-card:last-child { margin-bottom:0; }
+.work-card + .work-card { padding-top:14px; }
+.work-header { display:flex; align-items:baseline; flex-wrap:wrap; gap:9px; margin-bottom:11px; }
+.work-title { font-size:19px; font-weight:700; letter-spacing:1px;
+  font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; }
+.work-meta { font-size:12px; color:#4a4a4a; letter-spacing:0.5px; }
+.level-badge { font-size:10px; padding:2px 8px; border-radius:10px; border:1px solid currentColor; letter-spacing:1px; white-space:nowrap; }
+.lv-new { color:#1d4ed8; } .lv-familiar { color:#b45309; } .lv-fluent { color:#92400e; } .lv-mastered { color:#4a4a4a; }
+.work-body { display:grid; grid-template-columns:1.2fr 0.8fr; gap:26px; align-items:start; }
+.poem-text, .py-text { font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; }
+.poem-text { font-size:20px; line-height:2.1; letter-spacing:2px; white-space:nowrap; }
+.py-text { font-size:20px; letter-spacing:1px; }
+.py-line { display:flex; flex-wrap:wrap; align-items:flex-end; margin-bottom:9px; row-gap:6px; }
+/* 古诗两句一行：两列网格，第二列(次句)按最宽自动对齐；半句内字格自然撑宽 */
+.poem-grid { display:grid; grid-template-columns:max-content max-content; column-gap:1em; row-gap:9px; }
+.verse { display:flex; flex-wrap:wrap; align-items:flex-end; }
+/* 字格按拼音自然撑宽：无拼音=1em(紧)、有拼音=够宽(不重叠) —— 只有拼音字才占多宽 */
+.c { display:inline-flex; flex-direction:column; align-items:center; flex-shrink:0; min-width:1em; }
+.c::before { content:attr(data-p); display:block; height:15px; line-height:15px; font-size:10px;
+  font-family:"PingFang SC",sans-serif; font-weight:400; color:#333; text-align:center; white-space:nowrap; letter-spacing:0; }
+.c.punct { min-width:0.5em; }
+.section-label { font-size:10px; color:#4a4a4a; letter-spacing:3px; margin:13px 0 5px; }
+.section-label:first-child { margin-top:0; }
+.content-block { font-size:12.5px; color:#333; line-height:1.9; letter-spacing:0.2px; }
+.key-line { font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; font-size:16px; font-weight:700; letter-spacing:2px;
+  border-left:3px solid #999; padding:2px 11px; margin:7px 0; line-height:1.7; color:#333; }
+.char-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(52px, 1fr)); gap:14px 8px; justify-items:center; }
+.char-card { display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0; max-width:100%; }
+.char-card .py { font-size:10px; color:#333; line-height:1.4; min-height:14px; }
+.char-card .ch { font-size:23px; line-height:1.35; font-family:"Kaiti SC","STKaiti","KaiTi","楷体",serif; }
+.char-card .mean { font-size:10px; color:#4a4a4a; margin-top:2px; }
+@media print {
+  body { padding:0 22px; font-size:12px; max-width:none; margin:0; }
+  .day-section + .day-section { page-break-before:always; }
+  .day-section { display:flex; flex-direction:column; height:100vh; padding-top:16px; padding-bottom:16px; overflow:hidden; }
+  .day-header { flex-shrink:0; margin-bottom:14px; }
+  .week-note { flex-shrink:0; }
+  .works-container { flex:1; display:flex; flex-direction:column; justify-content:flex-start; gap:30px; overflow:hidden; }
+  .works-container:has(.work-card:nth-child(3):last-child) { gap:64px; }
+  .works-container:has(.work-card:nth-child(4):last-child) { gap:42px; }
+  .works-container:has(.work-card:nth-child(5):last-child) { gap:26px; }
+  .work-card { flex-shrink:0; margin-bottom:0; padding-top:0; }
+  .work-card + .work-card { padding-top:0; }
+  .poem-text { font-size:18px; line-height:2.0; }
+  .py-text { font-size:18px; }
+  .py-line { margin-bottom:7px; }
+  .c::before { font-size:9.5px; height:13px; line-height:13px; }
+  .char-card .ch { font-size:20px; }
+  /* 打印右栏被长诗句挤窄，缩小难字格列宽下限以保证仍≥3列（屏幕不受影响） */
+  .char-grid { grid-template-columns:repeat(auto-fit, minmax(38px, 1fr)); gap:13px 4px; }
+  .content-block { font-size:11.5px; line-height:1.85; }
+  .work-body { gap:22px; }
+}
+</style>
+</head>
+<body>
+<div class="day-section"><div class="week-note"><strong>第 27 周 · 朗读计划</strong>2026-06-29（周一）— 2026-07-04（周六）&ensp;·&ensp;本周 24首次 · 新课 1篇 · 复习 20篇</div><div class="day-header">周一 · 2026-06-29<span class="count">3首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">夜雨寄北</span>
+    <span class="work-meta">李商隐 · 唐 · 古诗</span>
+    <span class="level-badge lv-new">新课·第1天</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text poem-grid"><div class="verse"><span class="c">君</span><span class="c">问</span><span class="c">归</span><span class="c">期</span><span class="c">未</span><span class="c">有</span><span class="c">期</span><span class="c punct">，</span></div><div class="verse"><span class="c">巴</span><span class="c">山</span><span class="c">夜</span><span class="c">雨</span><span class="c" data-p="zhǎng">涨</span><span class="c">秋</span><span class="c">池</span><span class="c punct">。</span></div><div class="verse"><span class="c">何</span><span class="c">当</span><span class="c">共</span><span class="c">剪</span><span class="c">西</span><span class="c">窗</span><span class="c">烛</span><span class="c punct">，</span></div><div class="verse"><span class="c">却</span><span class="c">话</span><span class="c">巴</span><span class="c">山</span><span class="c">夜</span><span class="c">雨</span><span class="c">时</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">难字</div><div class="char-grid"><div class="char-card"><span class="py">zhǎng</span><span class="ch">涨</span><span class="mean">水位升高；秋雨…</span></div></div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">鸟鸣涧</span>
+    <span class="work-meta">王维 · 唐 · 古诗</span>
+    <span class="level-badge lv-familiar">熟悉复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text poem-grid"><div class="verse"><span class="c">人</span><span class="c">闲</span><span class="c">桂</span><span class="c">花</span><span class="c">落</span><span class="c punct">，</span></div><div class="verse"><span class="c">夜</span><span class="c">静</span><span class="c">春</span><span class="c">山</span><span class="c">空</span><span class="c punct">。</span></div><div class="verse"><span class="c">月</span><span class="c">出</span><span class="c">惊</span><span class="c">山</span><span class="c">鸟</span><span class="c punct">，</span></div><div class="verse"><span class="c">时</span><span class="c">鸣</span><span class="c">春</span><span class="c">涧</span><span class="c">中</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">作者王维人称“诗佛”，苏轼夸他“诗中有画”。这首写春夜山中——人闲桂花落、月出鸟鸣。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">四时田园杂兴（其三十一）</span>
+    <span class="work-meta">范成大 · 宋 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">昼出耘田夜绩麻，村庄儿女各当家。<br>童孙未解供耕织，也傍桑阴学种瓜。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">范成大写农忙——大人白天耕田、夜里搓麻，小孩也学着在桑荫下种瓜。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周二 · 2026-06-30<span class="count">4首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">夜雨寄北</span>
+    <span class="work-meta">李商隐 · 唐 · 古诗</span>
+    <span class="level-badge lv-new">新课·第2天</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text poem-grid"><div class="verse"><span class="c">君</span><span class="c">问</span><span class="c">归</span><span class="c">期</span><span class="c">未</span><span class="c">有</span><span class="c">期</span><span class="c punct">，</span></div><div class="verse"><span class="c">巴</span><span class="c">山</span><span class="c">夜</span><span class="c">雨</span><span class="c" data-p="zhǎng">涨</span><span class="c">秋</span><span class="c">池</span><span class="c punct">。</span></div><div class="verse"><span class="c">何</span><span class="c">当</span><span class="c">共</span><span class="c">剪</span><span class="c">西</span><span class="c">窗</span><span class="c">烛</span><span class="c punct">，</span></div><div class="verse"><span class="c">却</span><span class="c">话</span><span class="c">巴</span><span class="c">山</span><span class="c">夜</span><span class="c">雨</span><span class="c">时</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">名句</div><div class="key-line">何当共剪西窗烛，却话巴山夜雨时</div><div class="content-block">盼望将来重逢，一起在西窗下剪烛夜谈，回忆今夜的巴山夜雨。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">江南春</span>
+    <span class="work-meta">杜牧 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">千里莺啼绿映红，水村山郭酒旗风。<br>南朝四百八十寺，多少楼台烟雨中。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">杜牧写江南——千里莺啼绿映红、水村山郭酒旗风，还有南朝众多寺庙隐在烟雨里。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">黄鹤楼送孟浩然之广陵</span>
+    <span class="work-meta">李白 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">故人西辞黄鹤楼，烟花三月下扬州。<br>孤帆远影碧空尽，唯见长江天际流。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">作者李白人称“诗仙”，豪放爱交友。这首是他在黄鹤楼为好友孟浩然送行，目送孤帆远去、只剩长江东流。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">春望</span>
+    <span class="work-meta">杜甫 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">国破山河在，城春草木深。<br>感时花溅泪，恨别鸟惊心。<br>烽火连三月，家书抵万金。<br>白头搔更短，浑欲不胜簪。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">作者杜甫被尊为“诗圣”，诗记录时代、人称“诗史”。安史之乱中他困在长安，眼看国破草深、思念家人，写下“国破山河在”“家书抵万金”。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周三 · 2026-07-01<span class="count">4首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">自相矛盾</span>
+    <span class="work-meta">韩非 · 先秦 · 文言文</span>
+    <span class="level-badge lv-fluent">熟练复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text"><div class="py-line"><span class="c">楚</span><span class="c">人</span><span class="c">有</span><span class="c" data-p="yù">鬻</span><span class="c">盾</span><span class="c">与</span><span class="c">矛</span><span class="c">者</span><span class="c punct">，</span><span class="c" data-p="yù">誉</span><span class="c">之</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c" data-p="wú">吾</span><span class="c">盾</span><span class="c">之</span><span class="c">坚</span><span class="c punct">，</span><span class="c">物</span><span class="c">莫</span><span class="c">能</span><span class="c" data-p="xiàn">陷</span><span class="c">也</span><span class="c punct">。</span><span class="c">&quot;</span></div><div class="py-line"><span class="c">又</span><span class="c" data-p="yù">誉</span><span class="c">其</span><span class="c">矛</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c" data-p="wú">吾</span><span class="c">矛</span><span class="c">之</span><span class="c">利</span><span class="c punct">，</span><span class="c">于</span><span class="c">物</span><span class="c">无</span><span class="c">不</span><span class="c" data-p="xiàn">陷</span><span class="c">也</span><span class="c punct">。</span><span class="c">&quot;</span></div><div class="py-line"><span class="c" data-p="huò">或</span><span class="c" data-p="yuē">曰</span><span class="c punct">：</span><span class="c">&quot;</span><span class="c">以</span><span class="c">子</span><span class="c">之</span><span class="c">矛</span><span class="c punct">，</span><span class="c" data-p="xiàn">陷</span><span class="c">子</span><span class="c">之</span><span class="c">盾</span><span class="c punct">，</span><span class="c">何</span><span class="c">如</span><span class="c punct">？</span><span class="c">&quot;</span></div><div class="py-line"><span class="c">其</span><span class="c">人</span><span class="c" data-p="fú">弗</span><span class="c">能</span><span class="c" data-p="yìng">应</span><span class="c">也</span><span class="c punct">。</span></div><div class="py-line"><span class="c" data-p="fú">夫</span><span class="c">不</span><span class="c">可</span><span class="c" data-p="xiàn">陷</span><span class="c">之</span><span class="c">盾</span><span class="c">与</span><span class="c">无</span><span class="c">不</span><span class="c" data-p="xiàn">陷</span><span class="c">之</span><span class="c">矛</span><span class="c punct">，</span><span class="c">不</span><span class="c">可</span><span class="c">同</span><span class="c">世</span><span class="c">而</span><span class="c">立</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">出自《韩非子》，告诉我们说话做事要前后一致、别自己打自己脸。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">鸟鸣涧</span>
+    <span class="work-meta">王维 · 唐 · 古诗</span>
+    <span class="level-badge lv-familiar">熟悉复习</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text poem-grid"><div class="verse"><span class="c">人</span><span class="c">闲</span><span class="c">桂</span><span class="c">花</span><span class="c">落</span><span class="c punct">，</span></div><div class="verse"><span class="c">夜</span><span class="c">静</span><span class="c">春</span><span class="c">山</span><span class="c">空</span><span class="c punct">。</span></div><div class="verse"><span class="c">月</span><span class="c">出</span><span class="c">惊</span><span class="c">山</span><span class="c">鸟</span><span class="c punct">，</span></div><div class="verse"><span class="c">时</span><span class="c">鸣</span><span class="c">春</span><span class="c">涧</span><span class="c">中</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">以鸟鸣反衬山夜之静，是“以动衬静”的名例，越有声越显空寂。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">逢入京使</span>
+    <span class="work-meta">岑参 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">故园东望路漫漫，双袖龙钟泪不干。<br>马上相逢无纸笔，凭君传语报平安。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">名句“马上相逢无纸笔，凭君传语报平安”，千年来都是出门报平安的好句。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">秋夜将晓出篱门迎凉有感</span>
+    <span class="work-meta">陆游 · 宋 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">三万里河东入海，五千仞岳上摩天。<br>遗民泪尽胡尘里，南望王师又一年。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">年迈陆游夜出篱门，念念不忘北方失地，盼王师早日北伐。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周四 · 2026-07-02<span class="count">4首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">夜雨寄北</span>
+    <span class="work-meta">李商隐 · 唐 · 古诗</span>
+    <span class="level-badge lv-new">新课·第3天</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="py-text poem-grid"><div class="verse"><span class="c">君</span><span class="c">问</span><span class="c">归</span><span class="c">期</span><span class="c">未</span><span class="c">有</span><span class="c">期</span><span class="c punct">，</span></div><div class="verse"><span class="c">巴</span><span class="c">山</span><span class="c">夜</span><span class="c">雨</span><span class="c" data-p="zhǎng">涨</span><span class="c">秋</span><span class="c">池</span><span class="c punct">。</span></div><div class="verse"><span class="c">何</span><span class="c">当</span><span class="c">共</span><span class="c">剪</span><span class="c">西</span><span class="c">窗</span><span class="c">烛</span><span class="c punct">，</span></div><div class="verse"><span class="c">却</span><span class="c">话</span><span class="c">巴</span><span class="c">山</span><span class="c">夜</span><span class="c">雨</span><span class="c">时</span><span class="c punct">。</span></div></div></div>
+    <div class="work-right"><div class="section-label">名句</div><div class="key-line">何当共剪西窗烛，却话巴山夜雨时</div><div class="content-block">盼望将来重逢，一起在西窗下剪烛夜谈，回忆今夜的巴山夜雨。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">过故人庄</span>
+    <span class="work-meta">孟浩然 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">故人具鸡黍，邀我至田家。<br>绿树村边合，青山郭外斜。<br>开轩面场圃，把酒话桑麻。<br>待到重阳日，还来就菊花。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">田园名篇，“开轩面场圃，把酒话桑麻”写尽乡下做客的恬淡。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">寒食</span>
+    <span class="work-meta">韩翃 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">春城无处不飞花，寒食东风御柳斜。<br>日暮汉宫传蜡烛，轻烟散入五侯家。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">寒食节京城飞花，傍晚宫中先赐烛、轻烟入权贵家——暗讽特权。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">赤壁</span>
+    <span class="work-meta">杜牧 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">折戟沉沙铁未销，自将磨洗认前朝。<br>东风不与周郎便，铜雀春深锁二乔。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">杜牧在赤壁拾得旧铁戟，认出三国旧物，感慨“东风不与周郎便”历史或改写。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周五 · 2026-07-03<span class="count">4首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">浣溪沙</span>
+    <span class="work-meta">苏轼 · 宋 · 古词</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">游蕲水清泉寺，寺临兰溪，溪水西流。<br>山下兰芽短浸溪，松间沙路净无泥。<br>潇潇暮雨子规啼。<br>谁道人生无再少？<br>门前流水尚能西！<br>休将白发唱黄鸡。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">感叹时光——花落燕归年年有，逝去的好时光再回不来，独自小园徘徊。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">己亥杂诗（其五）</span>
+    <span class="work-meta">龚自珍 · 清 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">浩荡离愁白日斜，吟鞭东指即天涯。<br>落红不是无情物，化作春泥更护花。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">龚自珍辞官出京，借落花化春泥护花，表明仍愿为国出力。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">宿建德江</span>
+    <span class="work-meta">孟浩然 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">移舟泊烟渚，日暮客愁新。<br>野旷天低树，江清月近人。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">孟浩然江中泊舟过夜，野旷天低、江月近人，旅愁都在景里。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">观沧海</span>
+    <span class="work-meta">曹操 · 三国 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">东临碣石，以观沧海。<br>水何澹澹，山岛竦峙。<br>树木丛生，百草丰茂。<br>秋风萧瑟，洪波涌起。<br>日月之行，若出其中；<br>星汉灿烂，若出其里。<br>幸甚至哉，歌以咏志。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">作者曹操是东汉末年统一北方的枭雄，也是了不起的诗人。这首是他北征乌桓得胜、登碣石山看海时写的，用波涛汹涌、日月星汉都像从海里升起的磅礴景象，抒发吞吐天下的雄心。</div></div>
+  </div>
+</div></div></div><div class="day-section"><div class="day-header">周六 · 2026-07-04<span class="count">5首</span></div><div class="works-container"><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">石灰吟</span>
+    <span class="work-meta">于谦 · 明 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">千锤万凿出深山，烈火焚烧若等闲。<br>粉骨碎身浑不怕，要留清白在人间。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">于谦借石灰自喻——千锤万凿、烈火焚烧才得清白，哪怕粉身碎骨也要留清白人间。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">卜算子·送鲍浩然之浙东</span>
+    <span class="work-meta">王观 · 宋 · 古词</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">水是眼波横，山是眉峰聚。<br>欲问行人去那边？眉眼盈盈处。<br>才始送春归，又送君归去。<br>若到江南赶上春，千万和春住。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">王观送友去浙东，把山水比作美人眉眼，嘱友到江南与春同住。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">闻官军收河南河北</span>
+    <span class="work-meta">杜甫 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">剑外忽传收蓟北，初闻涕泪满衣裳。<br>却看妻子愁何在，漫卷诗书喜欲狂。<br>白日放歌须纵酒，青春作伴好还乡。<br>即从巴峡穿巫峡，便下襄阳向洛阳。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">多年逃难漂泊的杜甫，忽听官军收复失地，喜极而泣、卷书放歌要回乡——他“生平第一快诗”。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">春夜喜雨</span>
+    <span class="work-meta">杜甫 · 唐 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">好雨知时节，当春乃发生。<br>随风潜入夜，润物细无声。<br>野径云俱黑，江船火独明。<br>晓看红湿处，花重锦官城。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">杜甫晚年在成都草堂过了段安稳日子，这首写他夜里听见春雨悄悄润物的欣喜。</div></div>
+  </div>
+</div><div class="work-card">
+  <div class="work-header">
+    <span class="work-title">六月二十七日望湖楼醉书</span>
+    <span class="work-meta">苏轼 · 宋 · 古诗</span>
+    <span class="level-badge lv-mastered">已掌握</span>
+  </div>
+  <div class="work-body">
+    <div class="work-left"><div class="poem-text">黑云翻墨未遮山，白雨跳珠乱入船。<br>卷地风来忽吹散，望湖楼下水如天。</div></div>
+    <div class="work-right"><div class="section-label">故事</div><div class="content-block">苏轼被贬杭州时所作，他爱西湖的雨，这首抓住夏天暴雨“来得猛、去得快”的特点，转眼云开雨散。</div></div>
+  </div>
+</div></div></div>
+</body>
+</html>
